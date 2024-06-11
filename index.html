@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- Metadados -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="formulario.css" media="screen">
+
+    <!-- Título da página (aparece na aba) -->
+    <title>📄Sugestão de formulário</title>
+</head>
+
+<body>
+
+    <!-- Cabeçalho com título e subtítulo (ambos com css de id "titulo") -->
+    <div class="container">
+        <div class="cabecalho">
+            <h1 id="titulo">Sugestão de cadastro</h1>
+            <p id="subtitulo">Complete suas informações</p>
+            <br>
+        </div>
+
+
+        <!-- Início do formulário -->
+        <form>
+            <fieldset class="mega-grupo">
+                <fieldset class="grupo">
+                    <!-- Campo do nome com legenda "nome" e css de classe "campo" -->
+                    <h3><strong>Dados pessoais</strong></h3>
+                    <div class="campo">
+                        <label for="nome"><strong>Primeiro nome</strong></label>
+                        <input type="text" name="nome" id="nome" required>
+                    </div>
+
+
+                    <!-- Campo do sobrenome com legenda "sobrenome" e css de classe "campo" -->
+                    <div class="campo">
+                        <label for="sobrenome"><strong>Sobrenome</strong></label>
+                        <input type="text" name="sobrenome" id="sobrenome" required>
+                    </div>
+                </fieldset>
+
+                <!-- Campo de email com-->
+                <div class="campo">
+                    <label for="email"><strong>Email</strong></label>
+                    <input type="email" class="campo-email" name="email" id="email" required>
+                    <div class="campo">
+                        <label for="email"><strong>Confirmação de email</strong></label>
+                        <input type="email" class="campo-email" name="email" id="email" required>
+                    </div>
+                    <hr><br>
+
+                    <!-- Campo de desenvolvimento web com 3 opções de botões selecionáveis (radio button) e css de classe "campo" -->
+                    <div class="campo selecao-produto">
+                        <label for="temadecontato"><strong>Qual é o tema do seu contato?</strong></label>
+                        <select name="" id="temadecontato">
+                            <option selected disabled value="">Selecione</option>
+                            <option class="seletor-tema" value="Quero-comprar">Quero comprar</option>
+                            <option class="seletor-tema" value="Meus-pedidos">Meus pedidos</option>
+                            <option class="seletor-tema" value="Dados-pessoais">Dados pessoais e acesso</option>
+                            <option class="seletor-tema" value="Lojas-físicas">Lojas físicas</option>
+                            <option class="seletor-tema" value="Outros-assuntos">Outros assuntos</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <div class="selecao-produto__status" id="selecao-produto__status">
+                            <label><strong>Qual é a situação de seu pedido? </strong></label>
+                            <label>
+                                <input type="radio" name="devweb" value="ja-recebi" checked
+                                    class="selecao-produto__item">Já
+                                recebi
+                            </label>
+                            <label>
+                                <input type="radio" name="devweb" value="a-caminho" class="selecao-produto__item">Ainda
+                                não recebi
+                            </label>
+                        </div>
+                        <!-- Campo de senioridade com 3 opções para escolha (select option) e css de classe "campo" -->
+                        <div class="campo">
+                            <label for="motivoDeContato"><strong>Selecione o motivo:</strong></label>
+                            <select id="motivoDeContato" required>
+                                <option selected disabled value="">Selecione o tema de seu contato</option>
+                                <!-- <option selected disabled value="">Selecione</option>
+                                <option>Quero comprar | Disponibilidade de produto</option>
+                                <option>Quero comprar | Dúvida sobre produto</option>
+                                <option>Quero comprar | Elogio e sugestão</option>
+                                <option>Quero comprar | Erro na plataforma</option>
+                                <option>Quero comprar | Frete</option>
+                                <option>Quero comprar | Problemas com vale troca</option>
+                                <option>Quero comprar | Outros assuntos</option> -->
+                                <br>
+                                <!-- <option>Meus pedidos | Acompanhar minha entrega</option>
+                                <option>Meus pedidos | Alterar endereço de meu pedido</option>
+                                <option>Meus pedidos | Atraso na Entrega</option>
+                                <option>Meus pedidos | Cancelar pedido</option>
+                                <option>Meus pedidos | Dúvidas sobre meu pedido</option>
+                                <option>Meus pedidos | Elogio e sugestão</option>
+                                <option>Meus pedidos | Meu estorno não foi feito</option>
+                                <option>Meus pedidos | Pedido consta como entregue mas não recebi</option>
+                                <option>Meus pedidos | Pontuação programa de Fidelidade</option>
+                                <option>Meus pedidos | Problemas com a entrega</option>
+                                <option>Meus pedidos | Quero acionar a garantia</option>
+                                <option>Meus pedidos | Quero acompanhar uma troca ou devolução</option>
+                                <option>Meus pedidos | Quero trocar ou devolver um produto</option>
+                                <option>Meus pedidos | Recebi meu pedido errado</option>
+                                <option>Meus pedidos | Recebi meu pedido incompleto</option>
+                                <option>Meus pedidos | Segunda via de Nota Fiscal</option>
+                                <option>Meus pedidos | Meu pedido foi cancelado</option>
+                                <option>Meus pedidos | Outros assuntos</option> -->
+                                <br>
+                                <!-- <option>Dados pessoais | Ajuda com login</option>
+                                <option>Dados pessoais | Alteração senha</option>
+                                <option>Dados pessoais | Cadastro</option>
+                                <option>Dados pessoais | Elogio e sugestão</option>
+                                <option>Dados pessoais | Outros assuntos</option> -->
+                                <br>
+                                <!-- <option>Loja física | Atendimento</option>
+                                <option>Loja física | Elogio e sugestões</option>
+                                <option>Loja física | Esqueci um item em loja</option>
+                                <option>Loja física | Expansão de lojas físicas</option>
+                                <option>Loja física | Eventos</option>
+                                <option>Loja física | Horário de funcionamento</option>
+                                <option>Loja física | Segunda via de nota fiscal</option>
+                                <option>Loja física | Outros assuntos</option> -->
+                                <br>
+                                <!-- <option>Outros assuntos | Patrocínio e parcerias</option>
+                                <option>Outros assuntos | Decathlon Fundation</option>
+                                <option>Outros assuntos | Quero ser uma loja parceira</option> -->
+                            </select>
+                        </div>
+                    </div>
+                    <hr>
+                    <br>
+                    <!-- Caixa de texto -->
+                    <div class="campo">
+                        <label for="resumo-solicitacao"><strong>Conte-nos um pouco o que houve: </strong></label>
+                        <textarea rows="6" style="width: 26em" id="experiencia" name="resumo-solicitacao"
+                            placeholder="Não se esqueça de nos fornecer o máximo de informações relevantes"></textarea>
+                    </div>
+
+                    <div class="finalizacao">
+                        <!-- Botão para enviar o formulário -->
+                        <button class="botao" type="submit" onsubmit="">Enviar solicitação</button>
+                    </div>
+            </fieldset>
+        </form>
+    </div>
+    <script src="formulario.js"></script>
+</body>
+
+</html>
