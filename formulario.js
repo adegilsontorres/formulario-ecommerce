@@ -28,7 +28,7 @@ const listaDeMotivosQueroComprar = {
         ]
 }
 
-const listaDeMotivosMeusPedidosACaminho = {
+const listaDeMotivosMeusPedidos = {
     titulo:
         ["Acompanhar minha entrega",
             "Alterar endereço de meu pedido",
@@ -120,10 +120,12 @@ const listaDeMotivosOutrosAssuntos = {
     ]
 }
 
-//Esta função veirfica se o tema foi escolhido e dá o comando de Verificar o que foi escolhido
+//Esta função veirfica se o tema foi escolhido e dá o comando de escrever as opções do que foi escolhido
 campoTemaDeContato.addEventListener('change', function () {
-    verificarTemaDeContato();
-    if (campoTemaDeContato.value == 'Meus-pedidos') {
+    let temaSelecionado = campoTemaDeContato.value;
+    let listaDeMotivos = `listaDeMotivos` + temaSelecionado;
+    mostrarAssuntosNaTela(listaDeMotivos);
+    if (campoTemaDeContato.value == 'MeusPedidos') {
         campoStatusEntrega.style.display = 'block';
     } else {
         campoStatusEntrega.style.display = 'none';
@@ -131,54 +133,53 @@ campoTemaDeContato.addEventListener('change', function () {
 }
 )
 
+function mostrarAssuntosNaTela(listaDeMotivos) {
+    motivoDeContato.innerHTML = '<option selected disabled value="">Selecione</option>';
+
+    switch (listaDeMotivos) {
+        case 'listaDeMotivosQueroComprar':
+            for (let i = 0; i < listaDeMotivosQueroComprar.titulo.length; i++) {
+                motivoDeContato.innerHTML += `<option>${listaDeMotivosQueroComprar.titulo[i]}</option>`;
+            }
+            break;
+
+        case 'listaDeMotivosMeusPedidos':
+            for (let i = 0; i < listaDeMotivosMeusPedidos.titulo.length; i++) {
+                motivoDeContato.innerHTML += `<option>${listaDeMotivosMeusPedidos.titulo[i]}</option>`;
+            }
+            break;
+
+        case 'listaDeMotivosDadosPessoais':
+            for (let i = 0; i < listaDeMotivosDadosPessoais.titulo.length; i++) {
+                motivoDeContato.innerHTML += `<option>${listaDeMotivosDadosPessoais.titulo[i]}</option>`;
+            }
+            break;
+
+        case 'listaDeMotivosLojasFisicas':
+            for (let i = 0; i < listaDeMotivosLojasFisicas.titulo.length; i++) {
+                motivoDeContato.innerHTML += `<option>${listaDeMotivosLojasFisicas.titulo[i]}</option>`;
+            }
+            break;
+
+        case 'listaDeMotivosOutrosAssuntos':
+            for (let i = 0; i < listaDeMotivosOutrosAssuntos.titulo.length; i++) {
+                motivoDeContato.innerHTML += `<option>${listaDeMotivosOutrosAssuntos.titulo[i]}</option>`;
+            }
+            break;
+    }
+
+
+}
+
 //Esta função verifica o assunto do tema. 
 motivoDeContato.addEventListener('change', function () {
-    let assuntoEscolhido = motivoDeContato.value;
     let indexDeAssunto = listaDeMotivosQueroComprar.titulo.indexOf(motivoDeContato.value);
     alterarTextoDeAjuda(indexDeAssunto);
-    console.log(assuntoEscolhido);
-    console.log(indexDeAssunto);
 }
 )
 
-
-
-function verificarTemaDeContato() {
-    if (campoTemaDeContato.value == 'Quero-comprar') {
-        motivoDeContato.innerHTML = '<option selected disabled value="">Selecione</option>';
-        for (let i = 0; i < listaDeMotivosQueroComprar.titulo.length; i++) {
-            motivoDeContato.innerHTML += `<option>${listaDeMotivosQueroComprar.titulo[i]}</option>`;
-            //descricaoMotivoDeContato.placeholder = listaDeMotivosQueroComprar.descricao[i];
-        }
-    } else if (campoTemaDeContato.value == 'Meus-pedidos') {
-        motivoDeContato.innerHTML = '<option selected disabled value="">Selecione</option>';
-        for (let i = 0; i < listaDeMotivosMeusPedidosACaminho.titulo.length; i++) {
-            motivoDeContato.innerHTML += `<option>${listaDeMotivosMeusPedidosACaminho.titulo[i]}`;
-            //descricaoMotivoDeContato.placeholder = listaDeMotivosMeusPedidosACaminho.descricao[i];
-        }
-
-    } else if (campoTemaDeContato.value == 'Dados-pessoais') {
-        motivoDeContato.innerHTML = '<option selected disabled value="">Selecione</option>';
-        for (let i = 0; i < listaDeMotivosDadosPessoais.titulo.length; i++) {
-            motivoDeContato.innerHTML += `<option>${listaDeMotivosDadosPessoais.titulo[i]}</option>`;
-        }
-
-    } else if (campoTemaDeContato.value == 'Lojas-físicas') {
-        motivoDeContato.innerHTML = '<option selected disabled value="">Selecione</option>';
-        for (let i = 0; i < listaDeMotivosLojasFisicas.titulo.length; i++) {
-            motivoDeContato.innerHTML += `<option>${listaDeMotivosLojasFisicas.titulo[i]}</option>`;
-        }
-
-    } else if (campoTemaDeContato.value == 'Outros-assuntos') {
-        motivoDeContato.innerHTML = '<option selected disabled value="">Selecione</option>';
-        for (let i = 0; i < listaDeMotivosOutrosAssuntos.titulo.length; i++) {
-            motivoDeContato.innerHTML += `<option>${listaDeMotivosOutrosAssuntos.titulo[i]}</option>`;
-        }
-    }
+function alterarTextoDeAjuda(indice) {
+    descricaoMotivoDeContato.placeholder = listaDeMotivosQueroComprar.descricao[indice];
 }
 
-function alterarTextoDeAjuda(indice){
-    descricaoMotivoDeContato.placeholder= listaDeMotivosQueroComprar.descricao[indice];
-}
-
-verificarTemaDeContato();
+mostrarAssuntosNaTela();
