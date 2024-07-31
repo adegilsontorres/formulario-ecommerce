@@ -144,7 +144,7 @@ const listaDeMotivosLojasFisicas = {
 const listaDeMotivosOutrosAssuntos = {
     titulo: [
         "Patrocínio e parcerias",
-        "Decathlon Fundation",
+        "Projetos sociais",
         "Quero ser uma loja parceira"
     ],
     descricao: [
