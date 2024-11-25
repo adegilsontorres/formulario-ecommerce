@@ -1,34 +1,23 @@
-<!doctype html>
+<!Doctype html>
 <html>
 
 <head>
-    <!-- Metadados -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="formulario.css" media="screen">
-
-    <!-- Título da página (aparece na aba) -->
     <title>📄Sugestão de formulário</title>
 </head>
 
 <body>
-
-    <!-- Cabeçalho com título e subtítulo (ambos com css de id "titulo") -->
     <div class="container">
         <div class="cabecalho">
             <h1 id="titulo">Formulário Ecommerce</h1>
             <p id="subtitulo">Complete suas informações</p>
             <br>
         </div>
-
-
-        <!-- Início do formulário -->
         <form>
             <fieldset class="mega-grupo">
                 <fieldset class="grupo">
-                    <!-- Campo do nome com legenda "nome" e css de classe "campo" -->
                     <h3><strong>Dados pessoais</strong></h3>
                     <div class="campo">
                         <label for="nome"><strong>Primeiro nome</strong></label>
@@ -38,17 +27,14 @@
                     </div>
                 </fieldset>
 
-                <!-- Campo de email com-->
                 <div class="campo">
                     <label for="email"><strong>Email</strong></label>
-                    <input type="email" class="campo-email" name="email" id="email" required>
+                    <input type="email" class="campo-email" name="email" id="email" placeholder="Digite seu melhor email" required>
                     <div class="campo">
                         <label for="email"><strong>Confirmação de email</strong></label>
-                        <input type="email" class="campo-email" name="email" id="email" required>
+                        <input type="email" class="campo-email" name="email" id="email" placeholder="Confirme seu melhor email" required>
                     </div>
                     <hr><br>
-
-                    <!-- Campo de desenvolvimento web com 3 opções de botões selecionáveis (radio button) e css de classe "campo" -->
                     <div class="campo selecao-produto">
                         <h3><strong>Assunto de contato</strong></h3>
                         <label for="temadecontato"><strong>Qual é o tema do seu contato?</strong></label>
@@ -74,7 +60,6 @@
                                 não recebi
                             </label>
                         </div>
-                        <!-- Campo de senioridade com 3 opções para escolha (select option) e css de classe "campo" -->
                         <div class="campo">
                             <label for="motivoDeContato"><strong>Selecione o motivo:</strong></label>
                             <select id="motivoDeContato" required>
@@ -84,7 +69,6 @@
                     </div>
                     <hr>
                     <br>
-                    <!-- Caixa de texto -->
                     <div class="campo">
                         <label for="resumo-solicitacao"><strong>Conte-nos um pouco o que houve: </strong></label>
                         <textarea rows="6" style="width: 26em" id="experiencia" name="resumo-solicitacao"
@@ -92,11 +76,10 @@
                     </div>
 
                     <div class="finalizacao">
-                        <!-- Botão para enviar o formulário -->
                         <button class="botao" type="submit" onsubmit="" id="botaoEnviarFormulario">Enviar
                             solicitação</button>
                     </div>
-            </fieldset>
+                </div>
         </form>
     </div>
     <script src="formulario.js"></script>
